@@ -1,0 +1,213 @@
+/* =========================================================
+   GLOBAL THEME & CSS VARIABLES
+========================================================= */
+:root {
+  --bg-color: #0A0D14;
+  --sidebar-bg: #0F131E;
+  --card-bg: #161C2C;
+  --accent-color: #7C4DFF;
+  --accent-gradient: linear-gradient(135deg, #7C4DFF 0%, #B388FF 100%);
+  --success-color: #00E676;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(124, 77, 255, 0.5);
+  --radius: 8px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stApp {
+  background-color: var(--bg-color);
+  color: #FFFFFF;
+}
+
+[data-testid="stSidebar"] {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+}
+
+/* =========================================================
+   TYPOGRAPHY & GLOBAL OVERRIDES
+========================================================= */
+.block-container,
+.block-container * {
+  font-family: 'AdobeClean', sans-serif !important;
+}
+
+.block-container {
+  padding: 50px 3rem !important;
+  max-width: 780px !important;
+}
+
+/* =========================================================
+   TEXT & LABELS (High Contrast / Always Visible)
+========================================================= */
+p, label, span, li, small,
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stCaptionContainer"] p,
+.stForm label,
+.stForm p,
+.stForm span {
+  color: #FFFFFF !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'AdobeClean', sans-serif !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+/* Sidebar Text */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+  color: #F3F4F6 !important;
+}
+
+/* =========================================================
+   BUTTONS (Sleek modern styling with transitions)
+========================================================= */
+button,
+.stButton button,
+.stDownloadButton button,
+.MuiBox-root button {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius) !important;
+  font-family: 'AdobeClean', sans-serif !important;
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1.2rem !important;
+  transition: var(--transition) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+button:hover,
+.stButton button:hover,
+.stDownloadButton button:hover {
+  border-color: var(--accent-color) !important;
+  background: var(--accent-gradient) !important;
+  box-shadow: 0 6px 20px rgba(124, 77, 255, 0.3) !important;
+  transform: translateY(-2px);
+  color: #FFFFFF !important;
+}
+
+button:active,
+.stButton button:active {
+  transform: translateY(0);
+}
+
+/* Primary Form buttons / stream buttons */
+[data-testid="stFormSubmitButton"] button {
+  background: var(--accent-gradient) !important;
+  border-color: transparent !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stFormSubmitButton"] button:hover {
+  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.45) !important;
+}
+
+/* =========================================================
+   INPUTS & SELECTBOXES (Dropdown styling matching dark theme)
+========================================================= */
+input,
+textarea,
+[data-testid="stSelectbox"] > div > div,
+[data-baseweb="select"] > div,
+[data-testid="stNumberInputContainer"] {
+  border-radius: var(--radius) !important;
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  color: #FFFFFF !important;
+  font-family: 'AdobeClean', sans-serif !important;
+  transition: var(--transition) !important;
+}
+
+/* Dropdown list popover styling to prevent invisible items in light theme */
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+[data-baseweb="menu"] div,
+[data-baseweb="popover"] li,
+[data-baseweb="popover"] span {
+  background-color: #161C2C !important;
+  color: #FFFFFF !important;
+  border-radius: var(--radius) !important;
+}
+
+[data-baseweb="popover"] li:hover {
+  background-color: var(--accent-color) !important;
+}
+
+/* =========================================================
+   METRICS CARDS
+========================================================= */
+[data-testid="stMetric"] {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+[data-testid="stMetric"]::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+  background: var(--accent-gradient);
+}
+
+[data-testid="stMetric"]:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.15);
+}
+
+[data-testid="stMetric"] div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-testid="stMetricValue"] {
+  font-size: 1.7rem !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+}
+
+[data-testid="stMetricLabel"] {
+  font-size: 14px !important;
+  color: #B388FF !important; /* purple tint label */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+}
+
+/* =========================================================
+   CONTAINERS & FORMS
+========================================================= */
+.stForm {
+  margin-top: 2rem !important;
+  padding: 2rem 1.5rem !important;
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.stTable,
+.stDataFrame {
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border-color) !important;
+  overflow: hidden;
+}
