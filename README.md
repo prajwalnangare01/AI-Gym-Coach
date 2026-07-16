@@ -27,7 +27,7 @@ ai-gym-coach-main/
 ├── LandingPage/          # Frontend Web Presentation
 │   ├── index.html        # Landing page structure
 │   └── style.css         # Visual styles (grid overlays, scanlines)
-├── Main App/             # Core Streamlit Application
+├── MainApp/              # Core Streamlit Application
 │   ├── main.py           # Streamlit orchestrator and UI view
 │   ├── requirements.txt  # Python package dependencies
 │   ├── packages.txt      # Debian package dependencies (for deployment)
@@ -71,9 +71,9 @@ ai-gym-coach-main/
 Ensure you have **Python 3.10 or newer** installed on your system.
 
 ### 2. Clone and Install Dependencies
-Navigate to the `Main App` directory and install the necessary libraries:
+Navigate to the `MainApp` directory and install the necessary libraries:
 ```bash
-cd "Main App"
+cd MainApp
 pip install -r requirements.txt
 ```
 

@@ -12,7 +12,7 @@ venv/
 Thumbs.db
 
 # Database
-Main App/data.db
+MainApp/data.db
 
 # Logs
 *.log
